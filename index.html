@@ -1,14 +1,31 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hello World</title>
-  <link href='/style.css' rel='stylesheet'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LottoForge - Lottery Number Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
 </head>
 <body>
-  <h1>Hello, world!</h1>
-  <button onclick="console.log('hello');">Press me</button>
-  <script defer type="text/javascript" src="/main.js"></script>
+    <main class="container">
+        <header>
+            <h1>LottoForge</h1>
+            <p>Your Modern Lottery Number Generator</p>
+        </header>
+        <section class="lotto-display">
+            <div id="lotto-numbers-container" class="lotto-numbers">
+                <!-- Numbers will be generated here -->
+            </div>
+        </section>
+        <section class="actions">
+            <button id="generate-btn" class="btn btn-generate">Generate Numbers</button>
+            <button id="copy-btn" class="btn btn-copy">Copy Numbers</button>
+        </section>
+    </main>
+    <script src="main.js"></script>
 </body>
 </html>
