@@ -1,4 +1,3 @@
-
 :root {
     /* Light Mode */
     --background-color: #ffffff;
@@ -51,6 +50,8 @@ body {
 .container {
     text-align: center;
     padding: 2rem;
+    width: 100%;
+    max-width: 600px;
 }
 
 h1 {
@@ -136,6 +137,65 @@ h1 {
 
 .btn:active {
     transform: translateY(-1px);
+}
+
+/* Suggestions Form */
+.suggestions {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(128, 128, 128, 0.2);
+    width: 100%;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.suggestions h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.suggestions input,
+.suggestions textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border-radius: 10px;
+    border: 1px solid rgba(128, 128, 128, 0.3);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: var(--font-family);
+    font-size: 0.9rem;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+.suggestions input:focus,
+.suggestions textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.suggestions textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+.btn-submit {
+    background-color: var(--secondary-color);
+    color: #fff;
+    width: 100%;
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+[data-theme="dark"] .btn-submit {
+    background-color: var(--accent-color);
+    box-shadow: 0 0 10px var(--accent-color);
 }
 
 /* Theme Toggle Button */
