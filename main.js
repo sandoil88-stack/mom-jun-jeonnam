@@ -1,14 +1,29 @@
-
 const generateBtn = document.getElementById('generate-btn');
 const copyBtn = document.getElementById('copy-btn');
 const lottoNumbersContainer = document.getElementById('lotto-numbers-container');
+const themeToggle = document.getElementById('theme-toggle');
 
-const getNumberColor = (number) => {
-    if (number <= 10) return '#ffde59'; // Yellow
-    if (number <= 20) return '#4d91ff'; // Blue
-    if (number <= 30) return '#ff5757'; // Red
-    if (number <= 40) return '#aaaaaa'; // Grey
-    return '#4caf50'; // Green
+// Theme Logic
+const setTheme = (theme) => {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+    themeToggle.textContent = theme === 'dark' ? 'Light Mode' : 'Dark Mode';
+};
+
+const currentTheme = localStorage.getItem('theme') || 'light';
+setTheme(currentTheme);
+
+themeToggle.addEventListener('click', () => {
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    setTheme(theme);
+});
+
+const getNumberColorVar = (number) => {
+    if (number <= 10) return 'var(--num-1)';
+    if (number <= 20) return 'var(--num-2)';
+    if (number <= 30) return 'var(--num-3)';
+    if (number <= 40) return 'var(--num-4)';
+    return 'var(--num-5)';
 };
 
 generateBtn.addEventListener('click', () => {
@@ -24,7 +39,7 @@ generateBtn.addEventListener('click', () => {
         const lottoNumber = document.createElement('div');
         lottoNumber.classList.add('lotto-number');
         lottoNumber.textContent = number;
-        lottoNumber.style.backgroundColor = getNumberColor(number);
+        lottoNumber.style.backgroundColor = getNumberColorVar(number);
         lottoNumber.style.animationDelay = `${index * 0.1}s`;
         lottoNumbersContainer.appendChild(lottoNumber);
     });
